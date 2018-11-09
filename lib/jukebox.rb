@@ -43,5 +43,24 @@ def exit_jukebox
 end 
 
 def run
-  
+  help
+  user_command = ""
+
+  while user_command != "exit"
+    puts "Please enter a command:"
+    user_command = gets.downcase.strip
+    
+    case user_command
+    when "help"
+      help
+    when "list"
+     list(songs)
+    when "play"
+     play(songs)
+    when "exit"
+      exit_jukebox
+    else
+     puts "Invalid command, please try again"
+    end 
+  end
 end 
